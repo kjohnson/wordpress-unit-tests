@@ -16,6 +16,6 @@ runs:
   using: "composite"
   steps:
     - name: Example step
-      run: echo "hello world"
+      run: echo "php ${{ inputs.php }}, wordpress ${{ inputs.wordpress }}"
       shell: bash
 
