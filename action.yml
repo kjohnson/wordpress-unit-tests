@@ -7,21 +7,12 @@ branding:
   color: 'blue'
 
 inputs:
-  php:
-    required: true
   wordpress:
     required: true
   
 runs:
-  using: ubuntu-latest
+  using: "composite"
   steps:
-
-    - name: Setup PHP
-      uses: shivammathur/setup-php@v2
-      with:
-        php-version: ${{ inputs.php }}
-        extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
-        coverage: none
  
     - name: Install dependencies
       run: |
