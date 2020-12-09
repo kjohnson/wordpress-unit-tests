@@ -21,6 +21,10 @@ runs:
         composer update --prefer-dist --no-interaction --no-suggest
       shell: bash
 
+    - name: Setup tests
+      run: bash tests/bin/install.sh wordpress_test root root localhost ${{ inputs.wordpress }}
+      shell: bash
+
     - name: Execute tests
       run: vendor/bin/phpunit
       shell: bash
