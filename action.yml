@@ -19,6 +19,8 @@ runs:
         composer self-update --1
         composer require phpunit/phpunit:5.*
         composer update --prefer-dist --no-interaction --no-suggest
+      shell: bash
 
     - name: Execute tests
       run: vendor/bin/phpunit
+      shell: bash
