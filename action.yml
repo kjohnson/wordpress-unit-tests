@@ -9,6 +9,9 @@ branding:
 inputs:
   wordpress:
     required: true
+  install:
+    required: false
+    default: 'bin/install-wp-tests.sh'
   
 runs:
   using: "composite"
@@ -22,7 +25,7 @@ runs:
       shell: bash
 
     - name: Setup tests
-      run: bash tests/bin/install.sh wordpress_test root root localhost ${{ inputs.wordpress }}
+      run: bash ${{ inputs.install }} wordpress_test root root localhost ${{ inputs.wordpress }}
       shell: bash
 
     - name: Execute tests
