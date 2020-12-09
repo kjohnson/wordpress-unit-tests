@@ -14,4 +14,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: kjohnson/wordpresds-unit-tests
+      - uses: kjohnson/wordpresds-unit-tests@main
