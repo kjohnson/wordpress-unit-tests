@@ -5,6 +5,12 @@ author: 'Kyle B. Johnson'
 branding:
   icon: 'list'
   color: 'blue'
+
+inputs:
+  php:
+    required: true
+  wordpress:
+    required: true
   
 runs:
   using: "composite"
