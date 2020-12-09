@@ -15,6 +15,23 @@ inputs:
 runs:
   using: "composite"
   steps:
+
+    - name: Setup PHP
+      uses: shivammathur/setup-php@v2
+      with:
+        php-version: ${{ inputs.php }}
+        extensions: dom, curl, libxml, mbstring, zip, pcntl, pdo, sqlite, pdo_sqlite, mysql, mysqli, pdo_mysql, bcmath, soap, intl, gd, exif, iconv, imagick, fileinfo
+        coverage: none
+ 
+    - name: Install dependencies
+      run: |
+        composer self-update --1
+        composer require phpunit/phpunit:5.*
+        composer update --prefer-dist --no-interaction --no-suggest
+
+    - name: Execute tests
+      run: vendor/bin/phpunit
+
     - name: Example step
       run: echo "php ${{ inputs.php }}, wordpress ${{ inputs.wordpress }}"
       shell: bash
