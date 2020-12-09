@@ -13,8 +13,7 @@ inputs:
     required: true
   
 runs:
-  using: "composite"
-  runs-on: ubuntu-latest
+  using: ubuntu-latest
   steps:
 
     - name: Setup PHP
