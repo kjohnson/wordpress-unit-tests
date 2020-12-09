@@ -1,0 +1,14 @@
+name: 'WordPress Unit Tests'
+description: 'Not necessarily "unit" tests.'
+author: 'Kyle B. Johnson'
+
+branding:
+  icon: 'list'
+  color: 'blue'
+  
+runs:
+  using: "composite"
+  steps:
+    - name: Example step
+      run: echo "hello world"
+
