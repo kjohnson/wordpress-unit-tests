@@ -16,13 +16,6 @@ inputs:
 runs:
   using: "composite"
   steps:
- 
-    - name: Install dependencies
-      run: |
-        composer self-update --1
-        composer require phpunit/phpunit:5.*
-        composer update --prefer-dist --no-interaction --no-suggest
-      shell: bash
 
     - name: Setup tests
       run: bash ${{ inputs.install }} wordpress_test root root localhost ${{ inputs.wordpress }}

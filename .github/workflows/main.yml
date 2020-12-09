@@ -30,6 +30,12 @@ jobs:
 
       - name: Start MySQL
         run: sudo /etc/init.d/mysql start
+
+      - name: Install dependencies
+        run: |
+        composer self-update --1
+        composer require phpunit/phpunit:5.*
+        composer update --prefer-dist --no-interaction --no-suggest
         
       - uses: kjohnson/wordpress-unit-tests@main
         with:
