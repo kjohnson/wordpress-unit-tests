@@ -14,4 +14,4 @@ jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - uses: kjohnson/wordpresds-unit-tests@main
+      - uses: kjohnson/wordpress-unit-tests@main
