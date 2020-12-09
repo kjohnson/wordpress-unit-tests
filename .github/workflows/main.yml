@@ -16,7 +16,7 @@ jobs:
     strategy:
      matrix:
       php: [ 5.6, 7.2 ]
-      wordpresss: [ '4.9', '5.0' ]
+      wordpress: [ '4.9', '5.0' ]
     steps:
       - uses: kjohnson/wordpress-unit-tests@main
         with:
