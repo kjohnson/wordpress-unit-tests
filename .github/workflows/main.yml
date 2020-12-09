@@ -11,10 +11,14 @@ on:
   workflow_dispatch:
 
 jobs:
-  build:
+  test:
     runs-on: ubuntu-latest
+    strategy:
+     matrix:
+      php: [ 5.6, 7.2 ]
+      wordpresss: [ '4.9', '5.0' ]
     steps:
       - uses: kjohnson/wordpress-unit-tests@main
         with:
-         php: 7.2
-         wordpress: '5.0'
+         php: ${{ matrix.php }}
+         wordpress: ${{ matrix.wordpress }}
